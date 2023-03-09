@@ -1,5 +1,14 @@
-from rest_framework.routers import DefaultRouter
+# from rest_framework.routers import DefaultRouter
+#
+# router = DefaultRouter()
+#
+# router.register('exams')
 
-router = DefaultRouter()
+from django.urls import path
+from .views import ExamView, TaskView
 
-router.register('exams')
+urlpatterns = [
+    path("exams/", ExamView.as_view(), name="exams"),
+    path("tasks/", TaskView.as_view(), name="tasks"),
+    # path("exams/<int:id>")
+]
